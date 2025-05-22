@@ -19,11 +19,11 @@
             return $this->Preco;
         }
         //setters
-        public function setPreco(){
-            return $this->Preco;
+        public function setPreco($preco){
+            $this->Preco= $preco;
             
         }
-        public function setNome(){
+        public function setNome($nome){
             $this->Nome = $nome;
         }
         //outras funções
@@ -35,16 +35,16 @@
 
         public function removerEstoque($qtde){
             if($qtde < $this->Qtde){
-                $this->$Qtde -= $qtde;
+                $this->Qtde -= $qtde;
             }else{
                 echo "saque não autorizado. <br>";
             }
         }
 
         public function mostrarDetalhes(){
-            echo $Nome. "<br>";
-            echo $Preco. "<br>";
-            echo $Qtde. "<br>";
+            echo $this->Nome. "<br>";
+            echo $this->Preco. "<br>";
+            echo $this->Qtde. "<br>";
         }
     }
 
