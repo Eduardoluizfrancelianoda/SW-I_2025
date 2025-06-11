@@ -1,8 +1,9 @@
 <?php
     include_once 'index.class.php';
 
-    $funcionario = new funcionario("edu", 1500);
-    $funcionario-> exibirInformacoes();
-    $funcionario-> aumentarSalario(30);
-    $funcionario-> exibirInformacoes();
+    $retangulo = new retangulo;
+    $retangulo-> setLargura(50);
+    $retangulo-> setAltura(30);
+    $retangulo-> calcularArea();
+    $retangulo-> calcularPerimetro();
 ?>

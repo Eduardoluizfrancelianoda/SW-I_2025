@@ -5,18 +5,27 @@
 
 
         //getters
-        public function getLargura(){}
-        public function getAltura(){}
+        public function getLargura(){
+            return $this->largura;
+        }
+        public function getAltura(){
+            return $this->altura;
+        }
         //setters
-        public function setLargura(){}
-        public function setAltura(){}
+        public function setLargura($largura){
+            $this->largura = $largura;
+        }
+        public function setAltura($altura){
+            $this->altura = $altura;
+        }
         //metodos
         public function calcularArea(){
-            $this->altura += $this->altura * ($porcentagem/100);
+            $area = $this->altura * $this->largura;
+            echo "area= ". $area. "<br>";
         }
         public function calcularPerimetro(){
-            echo $this->largura. "<br>";
-            echo $this->altura. "<br>";
+            $perim = 2 * ($this->largura + $this->altura);
+            echo "perimetro= ". $perim. "<br>";
         }
     }
 ?>
