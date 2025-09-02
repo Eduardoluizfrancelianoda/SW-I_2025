@@ -1,23 +1,30 @@
 <?php
     include 'pedaco.php';
+    $id = $_GET['id'];
 ?>
 
     <div class="container">
-        <form action="atualizar.php" method="POST">
+        <form action="atualiza.php?id=<?php echo $id ?>" method="POST">
 
             <?php
                 $id=$_GET['id'];
-                echo"valor passado:$id";
-            ?>
+                //echo"valor passado:$id";
+            
+            require 'conexao.php';
+            $sql = "SELECT * FROM produtos where id=$id";
+            $stmt = $pdo->query($sql);
+            $produto = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            ?> 
 
             <div class="mb-3">
-                nome: <input type="text" class="form-control" name="nome" >                
+                nome: <input type="text" value="<?php echo $produto['nome']; ?>" class="form-control" name="nome_novo" >                
             </div>
             <div class="mb-3">
-                preco: <input type="text" class="form-control" name="preco" >                
+                preco: <input type="text" value="<?php echo $produto['preco']; ?>" class="form-control" name="preco_novo" >                
             </div>
             <div class="mb-3">
-                quantidade: <input type="text" class="form-control" name="quantidade" >                
+                quantidade: <input type="text" value="<?php echo $produto['quantidade']; ?>" class="form-control" name="quantidade_novo" >                
             </div>
             
             <button type="submit" class="btn btn-primary">atualizar</button>
